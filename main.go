@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	_ "github.com/fatih/color"
 	"gopkg.in/headzoo/surf.v1"
 	"os"
 	"strings"
@@ -89,7 +88,7 @@ func login(usr string, pas string) error {
 	if err != nil {
 		return err
 	}
-	form, err := netoo.Form(".wrap-login100 > form:nth-child(1)[name='login']")
+	form, err := netoo.Form(".wrap-login100 > form:nth-child(1)")
 	if err != nil {
 		return fmt.Errorf("[ERROR] Could not find the login form, you probably are already logged in <:")
 	}
